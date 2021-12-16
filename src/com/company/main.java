@@ -56,9 +56,11 @@ public class main extends JFrame {
 
 
                 if (formulaId == 1)
-                    im = kit.getImage("formula_1.png").getScaledInstance(600, 100, Image.SCALE_SMOOTH);
+                    im = kit.getImage("formula_1.png")
+                            .getScaledInstance(600, 100, Image.SCALE_SMOOTH);
                 else
-                    im = kit.getImage("formula_2.png").getScaledInstance(600, 100, Image.SCALE_SMOOTH);
+                    im = kit.getImage("formula_2.png")
+                            .getScaledInstance(600, 100, Image.SCALE_SMOOTH);
 
 
                 ImageIcon i = new ImageIcon();
@@ -92,19 +94,13 @@ public class main extends JFrame {
         Box picture = Box.createHorizontalBox();
         picture.add(Box.createVerticalGlue());
 
-        hboxFormulaType.add(Box.createHorizontalGlue());
-        addRadioButtonF("Formula 1", 1);
-        addRadioButtonF("Formula 2", 2);
-        radioButtonsF.setSelected(radioButtonsF.getElements().nextElement().getModel(), true);
-        hboxFormulaType.add(Box.createHorizontalGlue());
-
-        hboxMemRB.add(Box.createHorizontalGlue());
+        hboxMemRB.add(Box.createHorizontalGlue(), BorderLayout.CENTER);
         addRadioButtonM("MEM1", 1);
         addRadioButtonM("MEM2", 2);
         addRadioButtonM("MEM3", 3);
         radioButtonsM.setSelected(radioButtonsM.getElements().nextElement().getModel(), true);
 
-        hboxMemRB.add(Box.createHorizontalGlue());
+        hboxMemRB.add(Box.createHorizontalGlue(), BorderLayout.CENTER);
 
         JLabel labelForX = new JLabel("X:", JLabel.LEFT);
         textFieldX = new JTextField("0", 10);
@@ -116,49 +112,48 @@ public class main extends JFrame {
         textFieldZ = new JTextField("0", 10);
         textFieldZ.setMaximumSize(textFieldZ.getPreferredSize());
 
-        JLabel labelForM1 = new JLabel("MEM1:");
-        textFieldM[0] = new JTextField("0", 12);
+        JLabel labelForM1 = new JLabel("MEM1:", JLabel.CENTER);
+        textFieldM[0] = new JTextField("0", 10);
         textFieldM[0].setMaximumSize(textFieldM[0].getPreferredSize());
-        JLabel labelForM2 = new JLabel("MEM1:");
-        textFieldM[1] = new JTextField("0", 12);
+        JLabel labelForM2 = new JLabel("MEM1:", JLabel.CENTER);
+        textFieldM[1] = new JTextField("0", 10);
         textFieldM[1].setMaximumSize(textFieldM[1].getPreferredSize());
-        JLabel labelForM3 = new JLabel("MEM1:");
-        textFieldM[2] = new JTextField("0", 12);
+        JLabel labelForM3 = new JLabel("MEM1:", JLabel.CENTER);
+        textFieldM[2] = new JTextField("0", 10);
         textFieldM[2].setMaximumSize(textFieldM[2].getPreferredSize());
 
         Box hboxMem = Box.createHorizontalBox();
-        hboxMem.add(Box.createHorizontalGlue());
-        hboxMem.add(labelForM1);
-        hboxMem.add(Box.createHorizontalStrut(10));
-        hboxMem.add(textFieldM[0]);
-        hboxMem.add(Box.createHorizontalStrut(70));
-        hboxMem.add(labelForM2);
-        hboxMem.add(Box.createHorizontalStrut(10));
-        hboxMem.add(textFieldM[1]);
-        hboxMem.add(Box.createHorizontalStrut(70));
-        hboxMem.add(labelForM3);
-        hboxMem.add(Box.createHorizontalStrut(10));
-        hboxMem.add(textFieldM[2]);
-        hboxMem.add(Box.createHorizontalStrut(30));
+        hboxMem.add(Box.createHorizontalGlue(), BorderLayout.CENTER);
+        hboxMem.add(labelForM1, BorderLayout.CENTER);
+        hboxMem.add(Box.createHorizontalStrut(10), BorderLayout.CENTER);
+        hboxMem.add(textFieldM[0], BorderLayout.CENTER);
+        hboxMem.add(Box.createHorizontalStrut(10), BorderLayout.CENTER);
+        hboxMem.add(labelForM2, BorderLayout.CENTER);
+        hboxMem.add(Box.createHorizontalStrut(10), BorderLayout.CENTER);
+        hboxMem.add(textFieldM[1], BorderLayout.CENTER);
+        hboxMem.add(Box.createHorizontalStrut(10), BorderLayout.CENTER);
+        hboxMem.add(labelForM3, BorderLayout.CENTER);
+        hboxMem.add(Box.createHorizontalStrut(10), BorderLayout.CENTER);
+        hboxMem.add(textFieldM[2], BorderLayout.CENTER);
+        hboxMem.add(Box.createHorizontalStrut(10), BorderLayout.CENTER);
 
         Box hboxVariables = Box.createHorizontalBox();
-//        hboxVariables.add(Box.createHorizontalGlue());
+        hboxVariables.add(Box.createHorizontalGlue());
         hboxVariables.add(labelForX);
-//        hboxVariables.add(Box.createHorizontalStrut(10));
+        hboxVariables.add(Box.createHorizontalStrut(10));
         hboxVariables.add(textFieldX);
         hboxVariables.add(Box.createHorizontalGlue());
-//        hboxVariables.add(Box.createHorizontalStrut(80));
+        hboxVariables.add(Box.createHorizontalStrut(80));
         hboxVariables.add(labelForY);
-//        hboxVariables.add(Box.createHorizontalStrut(10));
+        hboxVariables.add(Box.createHorizontalStrut(10));
         hboxVariables.add(textFieldY);
         hboxVariables.add(Box.createHorizontalGlue());
-//        hboxVariables.add(Box.createHorizontalStrut(80));
+        hboxVariables.add(Box.createHorizontalStrut(80));
         hboxVariables.add(labelForZ);
-//        hboxVariables.add(Box.createHorizontalStrut(10));
+        hboxVariables.add(Box.createHorizontalStrut(10));
         hboxVariables.add(textFieldZ);
 
-//        hboxVariables.add(Box.createHorizontalStrut(60));
-
+        hboxVariables.add(Box.createHorizontalStrut(60));
 
         Box hboxImage = Box.createHorizontalBox();
         labelImage = new JLabel("");
@@ -232,11 +227,12 @@ public class main extends JFrame {
         hboxButtonsM.add(Box.createHorizontalStrut(30));
         hboxButtonsM.add(MC);
         hboxButtonsM.add(Box.createHorizontalGlue());
+        getContentPane().add(hboxButtonsM, BorderLayout.CENTER);
         Box contentBox = Box.createVerticalBox();
         contentBox.add(Box.createVerticalGlue());
         contentBox.add(hboxImage);
 
-        contentBox.add(hboxFormulaType);
+        //contentBox.add(hboxFormulaType);
         contentBox.add(hboxVariables);
         contentBox.add(hboxResult);
         contentBox.add(hboxButtons);
@@ -244,7 +240,15 @@ public class main extends JFrame {
         contentBox.add(hboxMemRB);
         contentBox.add(hboxMem);
         contentBox.add(Box.createVerticalGlue());
+        getContentPane().add(hboxButtonsM, BorderLayout.CENTER);
         getContentPane().add(contentBox, BorderLayout.CENTER);
+        contentBox.add(hboxFormulaType);
+
+        hboxFormulaType.add(Box.createHorizontalGlue());
+        addRadioButtonF("Formula 1", 1);
+        addRadioButtonF("Formula 2", 2);
+        radioButtonsF.setSelected(radioButtonsF.getElements().nextElement().getModel(), true);
+        hboxFormulaType.add(Box.createHorizontalGlue());
 
         Image im = kit.getImage("formula_1.png").getScaledInstance(600, 100, Image.SCALE_SMOOTH);;
         ImageIcon icon = new ImageIcon();
